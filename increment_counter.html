@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>increment</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: aqua;
+            display: grid;
+            place-items: center;
+        }
+
+        .child {
+            width: 20rem;
+            height: 10rem;
+            background-color: aliceblue;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
+            display: grid;
+            place-items: center;
+        }
+
+        #btn1 {
+            padding: 5px 10px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            background-color: rgb(255, 119, 119);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="child">
+            <input type="text" id="number" value="0"/>
+            <input type="submit" id="btn1" value="+" onclick="getInc()">
+        </div>
+    </div>
+
+    <script>
+      const getInc = () => {
+          var value = parseInt(document.getElementById("number").value);
+          value = isNaN(value) ? 0 : value;
+          value++;
+          document.getElementById("number").value = value;}
+
+    //       var value = parseInt(document.getElementById('number').value);
+    // value = isNaN(value) ? 0 : value;
+    // value++;
+    // document.getElementById('number').value = value;
+    //   }
+    </script>
+</body>
+
+</html>

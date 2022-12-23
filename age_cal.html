@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age_Cal</title>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: pog;
+        font-weight: 100;
+    }
+
+    @font-face {
+        font-family: pog;
+        src: url(../Font/Rubik-Regular.ttf);
+    }
+    
+    body
+    {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(3, 18, 40);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .center
+    {
+        width: 20rem;
+        height: 20rem;
+        background-color: rgb(128, 149, 168);
+        border-radius: 1rem;
+        box-shadow:  inset 5px 5px 5px rgb(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: aliceblue;
+        
+    }
+
+    h2{
+        text-align: center;
+        margin: 1.2rem 0;
+        color: rgb(229, 229, 224);
+    }
+
+    input{
+        text-align: center;
+        margin: 1rem 0;
+        border: none;
+        outline: none;
+    }
+
+    
+    #sub_btn{
+        width: 9.8rem;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+    h3
+    {
+        padding-top: 1rem;
+    }
+</style>
+</head>
+<body>
+    <div class="center">
+        <form method="dialog">
+            <h2>Age Calculater</h2>
+            Enter Name : <br><input type="text" id="name"><br/>
+            Enter Birthday Year : <br><input type="text" id="b_year"><br/>
+            <input type="submit" onclick="getAge()" id="sub_btn" value="get Age"><br/>
+            <h3 id="show"></h3>
+        </form>
+    </div>
+
+<script>
+    const getAge = () => {
+        let name = document.getElementById("name").value;
+        let b_year = parseInt(document.getElementById("b_year").value);
+        let show = document.getElementById("show");
+        let time = new Date();
+        let curr_year = time.getFullYear();
+        
+        if(b_year < curr_year && b_year != '' && name != '')
+        {
+            let age = Math.abs(b_year - curr_year);
+            (age);
+            show.innerHTML = `Hey, ${name} your age is ${age}.`;
+        }
+        else
+        {
+            show.innerHTML = 'Enter other than current Year';
+        }
+    }
+</script>
+</body>
+</html>

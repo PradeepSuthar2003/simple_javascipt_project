@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>key_event</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: pog;
+            font-weight: 100;
+        }
+
+        @font-face {
+            font-family: pog;
+            src: url(../Font/Rubik-Regular.ttf);
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(40, 30, 36);
+            display: grid;
+            place-items:center;
+            }
+
+        .child{
+            width: 30rem;
+            height: 15rem;
+            background-color: aliceblue;
+            display: grid;
+            place-items: center;
+            border-radius: 5px;
+            box-shadow: 2px 2x 50px rgb(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="child">
+            <input type="text" size="30" onkeypress="getKey()">
+            <h3 id="show">You Pressed : </h3>
+        </div>
+    </div>
+
+    <script>
+        const getKey = () =>{
+            document.getElementById("show").innerHTML = `You Pressed : ${event.key} and Code is ${event.code}`;
+        }
+
+    </script>
+</body>
+</html>

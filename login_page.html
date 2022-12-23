@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css"
+        integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: pog;
+            font-weight: 100;
+        }
+
+        @font-face {
+            font-family: pog;
+            src: url("../Font/Rubik-Regular.ttf");
+        }
+
+        ::selection {
+            background-color: transparent;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .main {
+            background-color: rgb(211, 214, 219);
+            width: 20rem;
+            height: 20rem;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0 40px 0;
+            font-size: .9rem;
+        }
+
+        .txt_user,
+        .txt_pass {
+            width: 13rem;
+            height: 1.7rem;
+            border: none;
+            outline: none;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+            font-size: .7rem;
+        }
+
+        .txt_pass {
+            width: 10.9rem;
+        }
+
+        label {
+            font-size: .8rem;
+        }
+
+        .field {
+            text-align: center;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .log_btn {
+            width: 10rem;
+            height: 2rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: .7rem;
+            border-radius: 2px;
+        }
+
+        #eye_open {
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h2>Login Now</h2>
+        </div>
+        <div class="field">
+            <label>Username : </label><br>
+            <input type="text" name="username" class="txt_user" placeholder="Enter username" required /><br>
+            <label>Password : </label><br>
+            <span><input type="password" name="password" class="txt_pass" placeholder="Enter password" required />
+                <i id="eye_open" onclick="eyeOn()">Hide</i>
+            </span>
+        </div>
+        <div class="btn">
+            <input type="submit" name="login" value="Login" class="log_btn" />
+        </div>
+    </div>
+</body>
+
+<script>
+    const eyeOn = () => {
+        $pass = document.querySelector('.txt_pass');
+        $mess = document.querySelector('#eye_open');
+
+        if ($pass.type == 'password') {
+            $pass.type = 'text';
+            $mess.innerHTML = 'Hide';
+        }
+        else {
+            $pass.type = 'password';
+            $mess.innerHTML = 'Show';
+        }
+
+    }
+</script>
+
+
+</html>
